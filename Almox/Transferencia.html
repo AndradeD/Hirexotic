@@ -1,0 +1,97 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class="container-fluid">
+	<div class='panel panel-primary'>
+		<div class="panel-heading">
+			<h1 class='text-center'>Transferências Pendentes</h1>
+		</div>
+		<div class="panel-body">
+			<div class="row container-fluid">
+				<div class="col-md-4">
+					<label for="tabela_resultado">Transferências pendentes:</label>
+					<div class='pre-scrollable table-responsive' style="max-height: 650px; min-height:500px">
+						<table id='tabela_resultado' class="table table-bordered table-hover" style="text-align: center;">
+							<thead>
+								<tr class='table table-bordered table-condensed table-striped'>
+									<th>N° da transferência</th>
+									<th>Destino</th>
+									<th>N° de materiais</th>
+								</tr>
+							</thead>
+							<tbody  id="resposta_transferencias" style="cursor:pointer">
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+				<div class="col-md-8">
+					<form class="form-horizontal" role='form'>
+						<div class="form-group">
+	              <label for='Destino'>Destino:</label>
+	              <input type="Text" class="form-control campo_transf" id="Destino" required placeholder="Ex:Divisão Técnica">
+	          </div>
+	          <div class="form-group">
+	              <label for="Solicitante">Solicitado por:</label>
+	              <input type="Text" class="form-control campo_transf" id="Solicitante" placeholder="Ex:Sgt Messias">
+	          </div>
+						<div class="form-group">
+							<label class='col-md-3 control-label' for="BI" >Boletim Interno:</label>
+							<div class="col-md-4">
+									<input type="Text" class="form-control bi campo_transf" id="BI" placeholder="Ex:001">
+							</div>
+							<label class='col-md-1 control-label' for="Data_BI"> de </label>
+							<div class="col-md-4">
+									<input type="Text" class="form-control data campo_transf" id="Data_BI" placeholder="Ex:01/01/2001" >
+							</div>
+						</div>
+	          <div class="form-group">
+              <fieldset id='Dados_Ext' disabled>
+								<label class='col-md-3 control-label' for="Guia" >Guia de transferência:</label>
+		            <div class="col-md-4">
+		                <input type="Text" class="form-control bi campo_transf" id="Guia" placeholder="Ex:001">
+		            </div>
+	              <label class='col-md-1 control-label' for="Data_guia"> de </label>
+		            <div class="col-md-4">
+		                <input type="Text" class="form-control data campo_transf" id="Data_guia" placeholder="Ex:01/01/2001" >
+		            </div>
+							</fieldset>
+	          </div>
+						<div class="form-group">
+							<input type="button" id='salva_transf' class="btn btn-block btn-success" value='Salvar Alterações'>
+						</div>
+						<div id='mens_altera' class='text-center alert' hidden></div>
+					</form>
+					<div class="panel-group">
+						<div class='panel panel-info'>
+							<div class="panel-heading text-center">Equipamentos	</div>
+					      <div class="panel-body">
+									<div class='pre-scrollable' style="max-height: 350px">
+										<table class='table table-bordered table-condensed table-striped' style="text-align: left;">
+				              <thead>
+				                <tr>
+													<th></th>
+				                  <th>Tipo</th>
+				                  <th>Marca/Modelo</th>
+				                  <th>Número de Série</th>
+												</tr>
+				              </thead>
+				              <tbody id='resposta_materiais'></tbody>
+				            </table>
+				          </div>
+								</div>
+						</div>
+						<div id='mens_remove' class='text-center alert' hidden></div>
+					</div>
+					<div class="col-md-12 text-center">
+						<input type="button" id='BtEfetiva' class="btn btn-lg btn-success" value='Efetuar'>
+						<input type="button" id='BtCancela' class="btn btn-lg btn-danger" value='Cancelar'>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="Transferencia/JavaScript/Transferencia.js"></script>
+<script src="Transferencia/JavaScript/Altera_transf.js"></script>
+<script src="Transferencia/JavaScript/Remove_Mat.js"></script>
+<script src="Transferencia/JavaScript/Cancela.js"></script>
+<script src="Transferencia/JavaScript/Efetiva.js"></script>

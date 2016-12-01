@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Portal Almox</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/Comuns/js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="/Comuns/css/bootstrap.min.css">
+    <script src="Comuns/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="container container-fluid">
+    	<div class='panel panel-primary'>
+    		<div class="panel-heading">
+    			<h2 class='text-center'>Detalhes dos Equipamentos</h2>
+    		</div>
+        <div class="panel-body">
+          <div class='pre-scrollable' style="max-height: 550px">
+            <table class='table table-bordered table-condensed table-striped'>
+              <thead>
+                <tr>
+                  <th>
+                    Tipo
+                  </th>
+                  <th>
+                    Marca/Modelo
+                  </th>
+                  <th>
+                    Número de Série
+                  </th>
+                  <th>
+                    Danfe
+                  </th>
+                  <th>
+                    Local no Almox
+                  </th>
+                  <th>
+                    Nota de Empenho
+                  </th>
+                  <th>
+                    TREM
+                  </th>
+                  <th>
+                    Projeto
+                  </th>
+                  <th>
+                    Identificador
+                  </th>
+                </tr>
+              </thead>
+              <tbody  id='resultado'></tbody>
+            </table>
+          </div>
+          <form role="form" action="/Consultar/PHP/Download.php" method="POST">
+              <input type="hidden" name='Material' id='Material' value="">
+              <input type="hidden" name='Modelo' id='Modelo' value="">
+              <input type="hidden" name='Projeto' id='Projeto' value="">
+              <button type="submit" class="btn btn-success btn-block">Baixar como CSV</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

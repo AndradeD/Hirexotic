@@ -1,0 +1,113 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Historico de Transferencia</h1>
+		</div>
+		<div class='row panel-body'>
+      <div class='col-md-6'>
+      <h4>Buscar por:</h4>
+        <ul id="myTabs" class="nav nav-tabs" role="tablist">
+	        <li class="active">
+	          <a id="transf-tab" aria-controls="Transferencia" data-toggle="tab" href="#Transferencia" aria-expanded="true">Transferência</a>
+	        </li>
+	        <li class="">
+	          <a id="mat-tab" aria-controls="Material" data-toggle="tab" href="#Material" aria-expanded="false">Material</a>
+	        </li>
+        </ul>
+        <div class="tab-content" style="padding: 10px; border-left: 1px solid #DDD; border-right: 1px solid #DDD; border-bottom: 1px solid #DDD">
+	        <div id="Transferencia" class="tab-pane fade active in" aria-labelledby="Transferencia-tab" role="tabpanel">
+						<div class='form-group'>
+							<form class="form-inline">
+								<div class='form-group' style='padding-right: 20px'>
+			            <label class='control-label' for="BI" style='width: 120px'>Boletim Interno:</label>
+	                <select class="form-control Filtro_hist" id="BI"></select>
+								</div>
+								<div class='form-group'>
+			            <label class='control-label' for="Data_BI" style='width: 40px'> de </label>
+									<select class="form-control Filtro_hist" id="Data_BI"></select>
+								</div>
+		          </form>
+						</div>
+						<div class='form-group'>
+							<label for="Destino">Transferido para:</label><br>
+							<select class="form-control Filtro_hist" id="Destino"></select>
+						</div>
+						<div class='form-group'>
+							<label for="Data_Transf">Data da Transferência:</label><br>
+							<select class="form-control Filtro_hist" id="Data_Transf"></select>
+						</div>
+						<div class='form-group'>
+							<form class="form-inline">
+								<div class='form-group' style='padding-right: 20px'>
+			            <label class='control-label' for="Guia_transf" style='width: 120px'>Guia de transferência:</label>
+	                <select class="form-control Filtro_hist" id="Guia_transf"></select>
+								</div>
+								<div class='form-group'>
+			            <label class='control-label' for="Data_guia" style='width: 40px'> de </label>
+									<select class="form-control Filtro_hist" id="Data_guia"></select>
+								</div>
+		          </form>
+						</div>
+					</div>
+	        <div id="Material" class="tab-pane fade" aria-labelledby="Material-tab" role="tabpanel">
+						<div class='form-group'>
+							<label for="Tipo">Tipo:</label><br>
+							<select class="form-control Filtro_hist" id="Tipo"></select>
+						</div>
+						<div class='form-group'>
+							<label for="Marca">Marca/Modelo:</label><br>
+							<select class="form-control Filtro_hist" id="Marca"></select>
+						</div>
+						<div class='form-group'>
+							<label for="SN">N/S:</label><br>
+							<input type="Text" data-toggle="tooltip" title="Dica:Você pode digitar apenas parte do N/S"
+								class="form-control Filtro_hist" id="SN" placeholder="Todos">
+						</div>
+						<div class='form-group'>
+							<label for="Danfe">Nota Fiscal:</label><br>
+							<select class="form-control Filtro_hist" id="Danfe"></select>
+						</div>
+						<div class='form-group'>
+							<label for="Empenho">Nota de Empenho:</label><br>
+							<select class="form-control Filtro_hist" id="Empenho"></select>
+						</div>
+					</div>
+        </div>
+				<div class="text-center">
+					<input id="BotaoBusca" type="button" class="btn btn-md btn-success" value="Procurar">
+					<input id="BotaoReset" type="button" class="btn btn-md btn-danger"value="Limpar Busca">
+				</div>
+	    </div>
+			<div class='col-md-6'>
+				<h4>Transferencias:</h4>
+				<div class='pre-scrollable table-responsive' style="max-height: 650px; min-height:350px">
+					<table id='tabela_resultado' class="table table-bordered table-hover" style="text-align: center;">
+						<thead>
+							<tr class='table table-bordered table-condensed table-striped'>
+								<th>Data de Transferencia</th>
+								<th>Destino</th>
+								<th>N° de materiais</th>
+							</tr>
+						</thead>
+						<tbody  id="resposta_transferencias" style="cursor:pointer">
+						</tbody>
+					</table>
+				</div>
+			</div>
+    </div>
+	</div>
+</div>
+<div class="modal fade" id="Detalhe_histórico" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>
+
+<script>
+	$(document).ready(function(){
+	  $('#myTabs a').click(function () {
+	    $(this).tab('show')
+	  });
+	});
+</script>
+<script src="Historico/JavaScript/Historico.js"></script>
+<script src="Historico/JavaScript/Atualiza_historico.js"></script>
+<script src="Historico/JavaScript/Procurar.js"></script>
+<script src="Historico/JavaScript/Visualizar.js"></script>

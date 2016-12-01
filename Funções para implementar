@@ -1,0 +1,43 @@
+-Login(Usuário, senha)
+ retorna se foi bem sucedido ou não e retorna o tipo de usuário(Cliente, Fornecedor ou Funcionário respectivamente 0, 1 ou 2)
+
+-Cadastrar(Nome, endereço, telefone, cpf, sexo, nascimento, usuário, senha) //pessoa física
+ retorna se foi bem sucedido ou não o cadastro
+
+-Cadastrar(Nome, endereço, telefone, cnpj, usuário, senha) //pessoa jurídica
+ retorna se foi bem sucedido ou não
+
+-Cadastrar(Nome, endereço, telefone, cargo, cpf, sexo, nascimento, matricula, usuário, senha)//funcionário
+ retorna se foi bem sucedido ou não
+
+-CadastrarModelo(Nome, Marca, Ano, NPassageiros, Velocidade, Cilindradas, NPortas)
+ retorna se foi bem sucedido ou não
+ //Essa opção só deve aparecer para um fornecedor logado
+
+-CadastrarAutomóvel(Placa, AnoFab, Cor, Combutível, PreçoMin, Modelo, URLImagem)
+ retorna se foi bem sucedido ou não
+ //Essa opção só deve aparecer para um fornecedor logado
+ //O modelo deve ser de um já cadastrado(ver ListarModelos())
+
+-ListarModelos()
+ retorna todos os modelos existentes no banco de dados
+ //Usado para dar as opções ao cadastrar o automóvel
+
+-ListarAutomoveis()
+ retorna Placa, AnoFab, Cor, Combustível, PreçoMin, Modelo, URLImagem do automóvel(para exibir ao cliente) e idAutomovel
+ //Usado para apresentar opções de aluguel ao cliente
+ //Atributo idAutomovel não deve ser apresentado ao cliente. Será usado para facilitar a função de aluguel(ver RealizarAluguel)
+
+-RealizarAluguel(idAutomovel, DataInicio, DataFim, Pagamento)
+ retorna se foi bem sucedido ou não
+ //O campo de pagamento pode ser só opção de cartão para simular dados de pagamento, já que não implementaremos a opção de pagamento
+ //Esta opção só deve ser permitida a clientes logados
+
+ -ListarAlugueis()
+  retorna Dados do Automovel(Placa, AnoFab, Cor, Combutível, Modelo), Fornecedor(Nome, Telefone) e idAluguel
+  //Esta opção só deve ser apresentada a um funcionário logado
+  //Atributo idAluguel não deverá ser apresentado ao usuário. Será usado para facilitar a função de validar o aluguel(ver validarAluguel)
+
+-ValidarAluguel(idAluguel, validado)//Validado = True or false
+  retorna se a operação foi bem sucedida ou não
+  //só deve ser apresentada ao funcionário logado

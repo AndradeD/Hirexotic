@@ -1,0 +1,130 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class="container-fluid">
+	<div class='panel panel-primary'>
+		<div class="panel-heading">
+			<h1 class='text-center'>Editar Material</h1>
+		</div>
+		<div class="panel-body">
+			<div class="row container-fluid">
+				<form role=form class="col-md-3">
+					<div class="form-group">
+						<label for="Tipo">Material:</label><br>
+						<select class="Campo form-control" id="Tipo">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Marca">Marca/Modelo</label><br>
+						<select class="Campo form-control " id="Marca">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Serie">N/S:</label><br>
+						<input type="Text" data-toggle="tooltip" title="Dica:Você pode digitar apenas parte do N/S"
+							class="Campo form-control" id="Serie" placeholder="Todos">
+					</div>
+					<div class="form-group">
+						<label for="NF">Nota Fiscal:</label><br>
+						<select class="Campo form-control" id="NF">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Local">Local Almox:</label><br>
+						<select class="Campo form-control" id="Local">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Empenho">Nota de Empenho:</label><br>
+						<select class="Campo form-control" id="Empenho">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="Proj">Projeto:</label><br>
+						<select class="Campo form-control " id="Proj">
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="ID">Identificador:</label><br>
+						<input type="text" class="Campo form-control" id="ID" placeholder="Ex: SW 001">
+					</div>
+					<div class="text-center form-group">
+						<button id="BotaoBusca" type="submit" class="btn btn-md btn-success">Procurar</button>
+						<input id="BotaoReset" type="button" class="btn btn-md btn-danger"value="Limpar Busca">
+					</div>
+				</form>
+				<div class="col-md-6">
+					<div id=ResultadoBusca hidden=true>
+						<label for="resposta">Equipamentos:</label>
+						<div class='pre-scrollable table-responsive' style="max-height: 600px; min-height:200px">
+							<table id='tabela_resultado' class="table table-bordered table-hover" style="text-align: center;">
+								<thead>
+									<tr class='info'>
+										<th>Tipo</th>
+										<th>Modelo</th>
+										<th>Numero de Série</th>
+									</tr>
+								</thead>
+								<tbody id="resposta" style="cursor:pointer">
+								</tbody>
+							</table>
+						</div>
+						<div id='resposta_edicao' class='text-center alert' hidden></div>
+					</div>
+				</div>
+
+				<div class="col-md-3" id="editor" hidden=true>
+					<form role='form'>
+						<div class="form-group">
+							<label for="Tipo_Busca">Material:</label><br>
+							<input type="Text" class="Campo_Ent form-control" id="Tipo_Busca">
+						</div>
+						<div class="form-group">
+							<label for="Marca_Busca">Marca/Modelo:</label><br>
+							<input type="Text" class="Campo_Ent form-control" id="Marca_Busca">
+						</div>
+						<div class="form-group">
+							<label for="Serie_Busca">N/S:</label><br>
+							<input type="Text" class="Campo_Ent form-control" id="Serie_Busca">
+						</div>
+						<div class="form-group">
+							<label for="NF-Busca">Nota Fiscal:</label><br>
+							<input type="Text" class="Campo_Ent form-control nota_fisc" id="NF_Busca" placeholder="123 de 01/02/2003">
+						</div>
+						<div class="form-group">
+							<label for="Local_Busca">Local Almox:</label><br>
+							<input type="Text" class="Campo_Ent form-control local" id="Local_Busca" placeholder="S3Aa1">
+						</div>
+						<div class="form-group">
+								<label for="Empenho_Busca">Nota de Empenho:</label><br>
+								<input type="Text" class="Campo_Ent form-control empenho" id="Empenho_Busca" placeholder="123/ 800123">
+						</div>
+						<div class="form-group">
+							<label for="Trem_Busca">TREM:</label><br>
+							<input type="Text" class="Campo_Ent form-control"id="Trem_Busca">
+						</div>
+						<div class="form-group">
+							<label for="Proj_Busca">Projeto:</label><br>
+							<input type="Text" class="Campo_Ent form-control" id="Proj_Busca">
+						</div>
+						<div class="form-group">
+							<label for="ID_Busca">Identificador:</label><br>
+							<input type="Text" class="Campo_Ent form-control identificador" id="ID_Busca" placeholder="SW 123">
+						</div>
+						<div class="text-center">
+							<input id="BotaoEditar" type="button" class="btn btn-lg btn-success" value="Editar"/>
+							<input id="BotaoRemover" type="button" class="btn btn-lg btn-danger" value="Transferir">
+						</div>
+						<input id='Chave_bd' class='Campo_Ent' type='hidden' value=''></input>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="modal fade" id="Dialogo_remocao" role="dialog" aria-hidden="true"></div>
+
+<script src="/Editar/JavaScript/Inicializa_Editar.js"></script>
+<script src="/Editar/JavaScript/Atualiza_Editar.js"></script>
+<script src="/Editar/JavaScript/Procurar.js"></script>
+<script src="/Editar/JavaScript/Visualizar.js"></script>
+<script src="/Editar/JavaScript/Editar.js"></script>
+<script src="/Editar/JavaScript/Remover.js"></script>

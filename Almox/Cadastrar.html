@@ -1,0 +1,85 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Cadastro de Material</h1>
+		</div>
+		<div class='panel-body'>
+			<form role='form' class='row container'>
+				<div class='col-md-6'>
+					<div class='form-group' id='Cadastro_tipo'>
+						<label>Material*:</label><br>
+				 		<input type="radio" id='Tipo_opt_exist' name="Tipo_opt" class="Tipo_opt" value="Tipo Existente" checked>
+						<label for="Tipo_opt_exist" style="font-weight: normal;">Tipo Existente</label><br>
+			  		<input type="radio" id='Tipo_opt_nov' name="Tipo_opt" class="Tipo_opt" value="Novo Tipo">
+						<label for="Tipo_opt_nov" style="font-weight: normal;">Novo Tipo</label>
+						<div class='form-inline'>
+							<div class='form-group'>
+								<select name="Tipo" class='form-control'id="Tipo_sel"></select>
+							</div>
+							<div class='form-group'>
+								ou <label for="Tipo_text" style="font-weight: normal;">Nome da nova classe: </label>
+								<input type="text" class='Campo form-control' id="Tipo_text" placeholder="Tipo do material" disabled>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label for="Marca">Marca/Modelo*:</label><br>
+						<input type="Text" class="Campo form-control" id="Marca">
+					</div>
+					<div class='form-group'>
+						<label for="NF">Nota Fiscal:</label><br>
+						<input type="Text" class="Campo form-control nota_fisc" id="NF" placeholder="Ex: 123 de 01/01/14">
+					</div>
+					<div class='form-group'>
+						<label for="Empenho">Nota de Empenho:</label><br>
+						<input type="Text" class="Campo form-control empenho" id="Empenho" placeholder="Ex: 2014/ 800285">
+					</div>
+					<div class='form-group'>
+						<label for="ID">Identificador:</label><br>
+						<input type="text" class="Campo form-control identificador" id="ID" placeholder="Ex: SW 001"><br>
+					</div>
+				</div>
+				<div class='col-md-6'>
+					<div class='form-group' id='Cadastro_projeto'>
+						<label>Projeto:</label><br>
+						<input type="radio" id='Proj_opt_exist' name="Proj_opt" class="Proj_opt" value="Projeto Existente" checked>
+						<label for="Proj_opt_exist" style="font-weight: normal;">Projeto Existente</label><br>
+						<input type="radio" id='Proj_opt_nov' name="Proj_opt" class="Proj_opt" value="Novo Projeto">
+						<label for="Proj_opt_nov" style="font-weight: normal;">Novo Projeto</label>
+						<div class='form-inline'>
+							<div class='form-group'>
+								<select name="Projeto" class='form-control' id="Proj_sel"></select>
+							</div>
+							<div class='form-group'>
+								ou <label for="Proj_text" style="font-weight: normal;">Nome do novo projeto:</label>
+								<input type="text" class='Campo form-control' id="Proj_text" placeholder="Nome do projeto" disabled>
+							</div>
+						</div>
+					</div>
+					<div class='form-group'>
+						<label for="Serie">N/S:</label><br>
+						<input type="Text" class="Campo form-control" id="Serie">
+					</div>
+					<div class='form-group'>
+						<label for="Local">Local Almox*:</label><br>
+						<input type="Text" class="Campo form-control local" id="Local" placeholder="Ex: S3Aa1">
+					</div>
+					<div class='form-group'>
+						<label for="TREM">TREM:</label><br>
+						<input type="Text" class="Campo form-control" id="TREM">
+					</div>
+					<div class='col-md-12 text-center'>
+						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success">Cadastrar</button>
+						<input id="BotaoLimpar" type="button" class="btn btn-lg btn-danger" value="Limpar"/>
+					</div>
+				</div>
+			</form>
+			<h4 class="text-center alert" id='resposta' hidden></h4>
+		</div>
+	</div>
+</div>
+<script src="/Cadastrar/JavaScript/populate_cadastro.js"></script>
+<script src="/Cadastrar/JavaScript/Select_cadastro.js"></script>
+<script src="/Cadastrar/JavaScript/Cadastro.js"></script>
+<script src="/Cadastrar/JavaScript/Limpar.js"></script>

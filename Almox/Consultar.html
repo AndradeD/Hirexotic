@@ -1,0 +1,62 @@
+<div class="row container-fluid">
+	<div class="col-md-8">
+		<div class='panel panel-primary'>
+			<div class="panel-heading">
+				<h1 class='text-center'>Consulta de Material</h1>
+			</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="Material">Material:</label>
+					<select class="form-control campoBusca" id="Material"></select>
+				</div>
+				<div class="form-group">
+					<label for="Modelo">Modelo:</label>
+					<select class="form-control campoBusca" id="Modelo">
+						<option selected="selected" value="">Todos</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="Projeto">Projeto:</label>
+					<select class="form-control campoBusca" id="Projeto">
+						<option selected="selected" value="">Todos</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<button type="submit" id='BotaoConsultar' class="btn btn-block btn-info">Consultar</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class='panel panel-primary '>
+			<div class='panel-heading'>
+				<h1 class='text-center'>Quantidade</h1>
+			</div>
+			<div class='panel-body'>
+				<table class='table table-striped'>
+					<tbody>
+						<tr>
+							<td class='text-left'>Disponível:</td>
+							<td id='Disponivel' class='text-center'></td>
+						</tr>
+						<tr>
+							<td class='text-left'>Em uso:</td>
+							<td id='Utilizado' class='text-center'></<td>
+						</tr>
+						<tr>
+							<td class='text-left'>Reservados:</td>
+							<td id='Reservado' class='text-center'></<td>
+						</tr>
+						<tr>
+							<td class='text-left'>Locais Guardados:</td>
+							<td id='Local' class='text-center'></<td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/Consultar/JavaScript/Populate.js"></script>
+<script src="/Consultar/JavaScript/Quantitativo.js"></script>
+<script src="/Consultar/JavaScript/Consultar.js"></script>

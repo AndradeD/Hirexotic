@@ -34,7 +34,7 @@ else
 
 try{
 	$result=connect($sql);
-	if(pg_affected_rows($result) == 0) //Se retornou SQLite3Result, a query não modificou nada(pela função connection). Logo, query frustrada => informações incorretas
+	if(pg_affected_rows($result) == 0) 
 		$mensagem="Usuário ou senha inválidos";
 	else
 		{

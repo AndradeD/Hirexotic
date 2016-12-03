@@ -2,6 +2,7 @@
 -Login(Usuário, senha)
  retorna se foi bem sucedido ou não e retorna o tipo de usuário(Cliente, Fornecedor ou Funcionário respectivamente 0, 1 ou 2)
 
+//Feito
 -Cadastrar(Nome, endereço, telefone, cpf, sexo, nascimento, usuário, senha) //pessoa física
  retorna se foi bem sucedido ou não o cadastro
 

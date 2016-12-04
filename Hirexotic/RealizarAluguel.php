@@ -1,5 +1,6 @@
 <?php
 	include $_SERVER["DOCUMENT_ROOT"] .'/Comuns/connection.php';
+	session_start();
 
 	$idautomovel=$_POST["idautomovel"];
 	$datainicio=$_POST["datainicio"];
@@ -15,7 +16,7 @@
 		die();
 	}
 
-	$sql="SELECT cpf from $tablename_cliente c, $tablename_user u WHERE c.usuario=u.usuario;"; //AND u.session_id=$user_id;";
+	$sql="SELECT cpf from $tablename_cliente c, $tablename_user u WHERE c.usuario=u.usuario AND u.session_id='$user_id';";
 
 
 	try{
@@ -32,17 +33,28 @@
 			$cpf=$collun->cpf;
 		}
 
-
-
 		$sql="INSERT INTO $tablename_aluguel VALUES (DEFAULT, $idautomovel, $cpf, '$datainicio', '$datafim', '$pagamento', $valor, NULL, NULL)";
 		$result=connect($sql);
 		if(pg_affected_rows($result) == 0)
       $packet=array('sucesso'=>false,'mensagem'=>'Falha no servidor');
 		else
+		{
+			$sql="UPDATE $tablename_automovel SET disponivel=FALSE WHERE id=$idautomovel;";
+			connect($sql);
+			if(pg_affected_rows($result) == 0)
+			{
+	      $packet=array('sucesso'=>false,'mensagem'=>'Falha no servidor');
+				$sql="DELETE FROM $tablename_aluguel WHERE id_automovel=$idautomovel;";
+				connect($sql);
+			}
+			else
         $packet=array('sucesso'=>true,'mensagem'=>'Aluguel realizado com sucesso');
-    echo json_encode($packet);
+		}
+		echo json_encode($packet);
 	}
 	catch(Exception $e){
-        	echo $e->getMessage(), "\n";
+			$sql="DELETE FROM $tablename_aluguel WHERE id_automovel=$idautomovel;";
+			connect($sql);
+    	echo $e->getMessage(), "\n";
     	}
 ?>

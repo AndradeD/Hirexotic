@@ -1,5 +1,8 @@
 <?php
-//TESTAR COM USER ID e COM UPDATE DE IMAGEM
+	/////////////////////////////////////////////////////////
+	//TODO:implementar lógica para armazenar nome da imagem//
+	/////////////////////////////////////////////////////////
+
 	include $_SERVER["DOCUMENT_ROOT"] .'/Comuns/connection.php';
 	session_start();
 
@@ -10,6 +13,7 @@
 	$precomin=$_POST["precomin"];
 	$modelo=$_POST["modelo"];
 	$user_id=$_SESSION["user_id"];
+	$URLImagem="somepath";///alterar!
 
 	if($placa==""||$anofab==""||$cor==""||$combustivel==""||$precomin==""||$modelo=="")
 	{
@@ -18,12 +22,12 @@
 		die();
 	}
 	try{
-		$sql= "SELECT cnpj, tipo FROM $tablename_fornecedor f, $tablename_user u WHERE f.usuario=u.usuario;";// AND session_id='$user_id';";
+		$sql= "SELECT cnpj, tipo FROM $tablename_fornecedor f, $tablename_user u WHERE f.usuario=u.usuario AND session_id='$user_id';";
 		$result=connect($sql);
 
 		if(pg_num_rows($result)==0)
 		{
-			$packet=array('sucesso'=>false,'mensagem'=>'Falha ao cadastrar');
+			$packet=array('sucesso'=>false,'mensagem'=>'Precisa estar logado para cadastrar');
 			echo json_encode($packet);
 			die();
 		}
@@ -32,7 +36,7 @@
 			$cnpj=$collun->cnpj;
 		}
 
-		$sql="INSERT INTO $tablename_automovel VALUES (DEFAULT, '$placa', $anofab, '$cor', '$combustivel', $precomin, $modelo, $cnpj, '$URLImagem');";
+		$sql="INSERT INTO $tablename_automovel VALUES (DEFAULT, '$placa', $anofab, '$cor', '$combustivel', $precomin, $modelo, $cnpj, TRUE, '$URLImagem');";
 		$result=connect($sql);
 		if(pg_affected_rows($result) == 0)
       $packet=array('sucesso'=>false,'mensagem'=>'Falha ao cadastrar');

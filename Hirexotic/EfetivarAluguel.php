@@ -1,5 +1,6 @@
 <?php
 	include $_SERVER["DOCUMENT_ROOT"] .'/Comuns/connection.php';
+	session_start();
 
 	$idaluguel=$_POST["idaluguel"];
 	$validado=$_POST["validado"];
@@ -12,7 +13,7 @@
 		die();
 	}
 
-	$sql="SELECT matricula from $tablename_funcionario c, $tablename_user u WHERE c.usuario=u.usuario;"; //AND u.session_id=$user_id;";
+	$sql="SELECT matricula from $tablename_funcionario c, $tablename_user u WHERE c.usuario=u.usuario AND u.session_id='$user_id';";
 
 
 	try{
@@ -29,13 +30,19 @@
 			$matricula=$collun->matricula;
 		}
 
-
 		$sql="UPDATE $tablename_aluguel SET funcionario_homolog=$matricula, homologada=$validado WHERE id=$idaluguel;";
 		$result=connect($sql);
 		if(pg_affected_rows($result) == 0)
       $packet=array('sucesso'=>false,'mensagem'=>'Falha no servidor');
 		else
-        $packet=array('sucesso'=>true,'mensagem'=>'Aluguel atualizado com sucesso');
+      $packet=array('sucesso'=>true,'mensagem'=>'Aluguel atualizado com sucesso');
+
+		//importante $validado ser minusculo
+		if($validado=="false")
+		{
+		  $sql="UPDATE $tablename_automovel a SET disponivel=TRUE FROM $tablename_aluguel l WHERE l.id_automovel=a.id AND l.id=$idaluguel;";
+			connect($sql);
+		}
     echo json_encode($packet);
 	}
 	catch(Exception $e){

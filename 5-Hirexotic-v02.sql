@@ -103,6 +103,8 @@ CREATE TABLE automovel
   preco_minimo double precision,
   modelo_id bigint,
   fornecedor_cnpj bigint,
+  disponivel boolean,
+  urlimagem text,
   CONSTRAINT automovel_pkey PRIMARY KEY (id),
   CONSTRAINT automovel_fornecedor_id_fkey FOREIGN KEY (fornecedor_cnpj)
       REFERENCES fornecedor (cnpj) MATCH SIMPLE
@@ -162,13 +164,13 @@ INSERT INTO cliente VALUES (11122233347, 'GENJI', 'M', 'rua 3', '33333333', '03/
 
 INSERT INTO fornecedor VALUES (11122233345, 'ZARYA', 'rua 1', '11111111', 'zarya');
 
-INSERT INTO funcionario VALUES (DEFAULT, 'ZENYATTA', 'rua 1', '11111111', 'gerente', 11122233345, 'M', '01/01/2001', 'zenyatta');
+INSERT INTO funcionario VALUES (DEFAULT, 'ZENYATTA', 'M', 'rua 1', '11111111', 'gerente', 11122233345, '01/01/2001', 'zenyatta');
 
 INSERT INTO modelo VALUES (DEFAULT, 'fusca', 'VV', 1998, 6, 160, 200, 2);
 INSERT INTO modelo VALUES (DEFAULT, 'ferrari', 'VV', 2006, 6, 170, 210, 4);
 
-INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 1990, 'azul', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
-INSERT INTO automovel VALUES (DEFAULT, 'lkg67233', 1990, 'branco', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
-INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 2010, 'preto', 'gasolina', 150.00, 2, 11122233345, 'path qualquer');
+INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 1990, 'azul', 'gasolina', 250.00, 1, 11122233345, FALSE, 'path qualquer');
+INSERT INTO automovel VALUES (DEFAULT, 'lkg67233', 1990, 'branco', 'gasolina', 250.00, 1, 11122233345, TRUE, 'path qualquer');
+INSERT INTO automovel VALUES (DEFAULT, 'kfg4903', 2010, 'preto', 'gasolina', 150.00, 2, 11122233345, TRUE, 'path qualquer');
 
-INSERT INTO aluguel VALUES (DEFAULT, 1, 11122233345, '22/09/2016','24/09/2016', 'credito', 200.00, FALSE, NULL );
+INSERT INTO aluguel VALUES (DEFAULT, 1, 11122233345, '22/09/2016','24/09/2016', 'credito', 200.00, NULL, NULL );

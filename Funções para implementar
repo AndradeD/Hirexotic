@@ -36,16 +36,19 @@
  //Usado para apresentar opções de aluguel ao cliente
  //Atributo idAutomovel não deve ser apresentado ao cliente. Será usado para facilitar a função de aluguel(ver RealizarAluguel)
 
--RealizarAluguel(idAutomovel, DataInicio, DataFim, Pagamento)
+//Feito
+-RealizarAluguel(idAutomovel, DataInicio, DataFim, Pagamento, Valor)
  retorna se foi bem sucedido ou não
  //O campo de pagamento pode ser só opção de cartão para simular dados de pagamento, já que não implementaremos a opção de pagamento
  //Esta opção só deve ser permitida a clientes logados
 
+//Feito
  -ListarAlugueis()
   retorna Dados do Automovel(Placa, AnoFab, Cor, Combutível, Modelo), Fornecedor(Nome, Telefone) e idAluguel
   //Esta opção só deve ser apresentada a um funcionário logado
   //Atributo idAluguel não deverá ser apresentado ao usuário. Será usado para facilitar a função de validar o aluguel(ver validarAluguel)
 
+//Feito
 -ValidarAluguel(idAluguel, validado)//Validado = True or false
   retorna se a operação foi bem sucedida ou não
   //só deve ser apresentada ao funcionário logado

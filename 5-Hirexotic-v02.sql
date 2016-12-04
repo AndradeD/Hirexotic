@@ -118,6 +118,34 @@ ALTER TABLE automovel
   OWNER TO postgres;
 
 
+CREATE TABLE aluguel
+(
+  id SERIAL,
+  id_automovel bigint,
+  cpf_cliente bigint,
+  datainicio timestamp without time zone,
+  datafim timestamp without time zone,
+  pagamento text,
+  valor double precision,
+  homologada boolean,
+  funcionario_homolog bigint,
+  CONSTRAINT aluguel_pkey PRIMARY KEY (id),
+  CONSTRAINT aluguel_id_automovel_fkey FOREIGN KEY (id_automovel)
+      REFERENCES automovel (id) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT aluguel_cpf_cliente_fkey FOREIGN KEY (cpf_cliente)
+      REFERENCES cliente (cpf) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT aluguel_funcionario_homolog_fkey FOREIGN KEY (funcionario_homolog)
+      REFERENCES funcionario (matricula) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE modelo
+  OWNER TO postgres;
+
 --Alguns dados
 
 INSERT INTO login VALUES ('lucio', '7110eda4d09e062aa5e4a390b0a572ac0d2c0220', 0);--senha = 1234 em sha1
@@ -142,3 +170,5 @@ INSERT INTO modelo VALUES (DEFAULT, 'ferrari', 'VV', 2006, 6, 170, 210, 4);
 INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 1990, 'azul', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
 INSERT INTO automovel VALUES (DEFAULT, 'lkg67233', 1990, 'branco', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
 INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 2010, 'preto', 'gasolina', 150.00, 2, 11122233345, 'path qualquer');
+
+INSERT INTO aluguel VALUES (DEFAULT, 1, 11122233345, '22/09/2016','24/09/2016', 'credito', 200.00, FALSE, NULL );

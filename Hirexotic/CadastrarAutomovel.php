@@ -18,10 +18,10 @@
 		die();
 	}
 	try{
-		$sql= "SELECT cnpj, tipo FROM $tablename_fornecedor f, $tablename_user u WHERE f.usuario=u.usuario";// AND session_id='$user_id';";
+		$sql= "SELECT cnpj, tipo FROM $tablename_fornecedor f, $tablename_user u WHERE f.usuario=u.usuario;";// AND session_id='$user_id';";
 		$result=connect($sql);
 
-		if(pg_affected_rows($result)==0)
+		if(pg_num_rows($result)==0)
 		{
 			$packet=array('sucesso'=>false,'mensagem'=>'Falha ao cadastrar');
 			echo json_encode($packet);

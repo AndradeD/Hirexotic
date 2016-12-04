@@ -7,4 +7,5 @@
  $tablename_funcionario = "funcionario";
  $tablename_modelo = "modelo";
  $tablename_automovel = "automovel";
+ $tablename_aluguel = "aluguel";
 ?>

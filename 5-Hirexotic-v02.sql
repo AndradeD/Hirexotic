@@ -139,6 +139,6 @@ INSERT INTO funcionario VALUES (DEFAULT, 'ZENYATTA', 'rua 1', '11111111', 'geren
 INSERT INTO modelo VALUES (DEFAULT, 'fusca', 'VV', 1998, 6, 160, 200, 2);
 INSERT INTO modelo VALUES (DEFAULT, 'ferrari', 'VV', 2006, 6, 170, 210, 4);
 
-INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 1990, 'azul', 'gasolina', 250.00, 1, 11122233345);
-INSERT INTO automovel VALUES (DEFAULT, 'lkg67233', 1990, 'branco', 'gasolina', 250.00, 1, 11122233345);
-INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 2010, 'preto', 'gasolina', 150.00, 2, 11122233345);
+INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 1990, 'azul', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
+INSERT INTO automovel VALUES (DEFAULT, 'lkg67233', 1990, 'branco', 'gasolina', 250.00, 1, 11122233345, 'path qualquer');
+INSERT INTO automovel VALUES (DEFAULT, 'kve1483', 2010, 'preto', 'gasolina', 150.00, 2, 11122233345, 'path qualquer');

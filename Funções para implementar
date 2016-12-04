@@ -6,25 +6,31 @@
 -Cadastrar(Nome, endereço, telefone, cpf, sexo, nascimento, usuário, senha) //pessoa física
  retorna se foi bem sucedido ou não o cadastro
 
+//Feito
 -Cadastrar(Nome, endereço, telefone, cnpj, usuário, senha) //pessoa jurídica
  retorna se foi bem sucedido ou não
 
--Cadastrar(Nome, endereço, telefone, cargo, cpf, sexo, nascimento, matricula, usuário, senha)//funcionário
+//Feito
+-Cadastrar(Nome, endereço, telefone, cargo, cpf, sexo, nascimento, usuário, senha)//funcionário
  retorna se foi bem sucedido ou não
 
+//Feito
 -CadastrarModelo(Nome, Marca, Ano, NPassageiros, Velocidade, Cilindradas, NPortas)
  retorna se foi bem sucedido ou não
  //Essa opção só deve aparecer para um fornecedor logado
 
+//Feito
 -CadastrarAutomóvel(Placa, AnoFab, Cor, Combutível, PreçoMin, Modelo, URLImagem)
  retorna se foi bem sucedido ou não
  //Essa opção só deve aparecer para um fornecedor logado
  //O modelo deve ser de um já cadastrado(ver ListarModelos())
 
+//Feito
 -ListarModelos()
  retorna todos os modelos existentes no banco de dados
  //Usado para dar as opções ao cadastrar o automóvel
 
+//Feito
 -ListarAutomoveis()
  retorna Placa, AnoFab, Cor, Combustível, PreçoMin, Modelo, URLImagem do automóvel(para exibir ao cliente) e idAutomovel
  //Usado para apresentar opções de aluguel ao cliente

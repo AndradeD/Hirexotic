@@ -5,7 +5,7 @@ session_start();
 $sucess=false;
 $tipo=-1;
 $mensagem='';
-if(isset( $_SESSION['user_id']))
+if(isset($_SESSION['user_id']))
 	unset($_SESSION['user_id']);
 
 //Valida campos enviados
@@ -34,7 +34,7 @@ else
 
 try{
 	$result=connect($sql);
-	if(pg_affected_rows($result) == 0) 
+	if(pg_affected_rows($result) == 0)
 		$mensagem="Usuário ou senha inválidos";
 	else
 		{

@@ -1,0 +1,54 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Cadastro de Modelos</h1>
+		</div>
+		<div class='panel-body'>
+			<form role='form' class='row container'>
+				<div class='col-md-6'>
+					<div class='form-group' id='Cadastro_tipo'>
+						<label>Modelo</label><br>
+				 		<div class='form-inline'>
+							<div class='form-group'>
+								 <label for="Nome_text" style="font-weight: normal;">Nome</label>
+								<input type="text" class='Campo form-control' id="Nome_text" placeholder="Nome" disabled>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label for="Marca">Marca</label><br>
+							<input type="Text" class="Campo form-control marca" id="Marca">
+						</div>
+						<div class='form-group'>
+							<label for="Ano">Ano</label><br>
+							<input type="Text" class="Campo form-control ano" id="Ano"
+						</div>
+						<div class='form-group'>
+							<label for="NumPassageiros">Número de Passageiros</label><br>
+							<input type="Text" class="Campo form-control numPassageiros" id="NumPassageiros">
+						</div>
+						<div class='form-group'>
+							<label for="Velocidade">Velocidade</label><br>
+							<input type="text" class="Campo form-control velocidade" id="Velocidade">
+						</div>
+            <div class='form-group'>
+							<label for="Cilindradas">Cilindradas</label><br>
+							<input type="text" class="Campo form-control cilindradas" id="Cilindradas">
+						</div>
+						<div class='form-group'>
+							<label for="NumPortas">Número de Portas</label><br>
+							<input type="number" class="Campo form-control numPortas" id="NumPortas">
+						</div>
+					</div>
+				</div>
+					<div class='col-md-12 text-center'>
+						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success" onclick=$.load("/Cadastro_Modelo/Javascript/Cadastro_Modelo.js")>Cadastrar</button>
+						<input id="BotaoLimpar" type="button" class="btn btn-lg btn-danger" value="Cancelar"/>
+					</div>
+				</div>
+			</form>
+			<h4 class="text-center alert" id='resposta' hidden></h4>
+		</div>
+	</div>
+</div>
+<script src="/Cadastro_Modelo/JavaScript/Cadastro_Modelo.js"></script>

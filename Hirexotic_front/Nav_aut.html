@@ -1,0 +1,15 @@
+<li id=Consultar_nav class="nav_icon active"><a href="javascript:void(0);" onclick=$("#Workbench").load("Consultar.html");>Consultar</a></li>
+<li id=Cadastrar_nav class="nav_icon" ><a href="javascript:void(0);" onclick=$("#Workbench").load("Cadastrar.html");>Cadastrar</a></li>
+<li id=Editar_nav class="nav_icon"><a href="javascript:void(0);" onclick=$("#Workbench").load("Editar.html");>Editar</a></li>
+<li id=Transferencias_nav class="nav_icon"><a href="javascript:void(0);" onclick=$("#Workbench").load("Transferencia.html");>Transferências</a></li>
+<li id=Historico_nav class="nav_icon"><a href="javascript:void(0);" onclick=$("#Workbench").load("Historico.html");>Histórico</a></li>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".nav_icon").click(function(event)
+    {
+      $(".active").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+</script>

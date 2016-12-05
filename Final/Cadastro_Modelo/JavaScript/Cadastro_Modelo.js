@@ -1,14 +1,10 @@
 $(document).ready(function(){
-
-  $.get("/Comuns/TestAut.php",
-			function(data)
-			{
-				if(data.tipoUsuario != 1){
-          window.location.href="index.html";
-        }else{
+$("form").on("submit", function (e)
+{
+  e.preventDefault();
   $.post("/Cadastro_Modelo/PHP/Cadastro_Modelo.php",
 	  {
-		nome: $("#Nome_text").val(),
+		nome: $("#Nome").val(),
 		marca: $("#Marca").val(),
 		ano: $("#Ano").val(),
 		numPassageiros: $("#NumPassageiros").val(),
@@ -34,7 +30,5 @@ $(document).ready(function(){
       },3500);
     },
     'json');
-
   });
 });
-}

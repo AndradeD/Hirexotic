@@ -6,45 +6,43 @@
 		</div>
 		<div class='panel-body'>
 			<form role='form' class='row container'>
-				<div class='col-md-6'>
+				<div class='col-md-12'>
 					<div class='form-group' id='Cadastro_tipo'>
 						<label>Modelo</label><br>
-				 		<div class='form-inline'>
 							<div class='form-group'>
-								 <label for="Nome_text" style="font-weight: normal;">Nome</label>
-								<input type="text" class='Campo form-control' id="Nome_text" placeholder="Nome" disabled>
+								<input type="text" class='Campo form-control' id="Nome">
 							</div>
 						</div>
 						<div class='form-group'>
 							<label for="Marca">Marca</label><br>
-							<input type="Text" class="Campo form-control marca" id="Marca">
+							<input type="Text" class="Campo form-control" id="Marca">
 						</div>
 						<div class='form-group'>
 							<label for="Ano">Ano</label><br>
-							<input type="Text" class="Campo form-control ano" id="Ano"
+							<input type="Text" class="Campo form-control" id="Ano">
 						</div>
 						<div class='form-group'>
 							<label for="NumPassageiros">Número de Passageiros</label><br>
-							<input type="Text" class="Campo form-control numPassageiros" id="NumPassageiros">
+							<input type="Text" class="Campo form-control" id="NumPassageiros">
 						</div>
 						<div class='form-group'>
 							<label for="Velocidade">Velocidade</label><br>
-							<input type="text" class="Campo form-control velocidade" id="Velocidade">
+							<input type="text" class="Campo form-control" id="Velocidade">
 						</div>
             <div class='form-group'>
 							<label for="Cilindradas">Cilindradas</label><br>
-							<input type="text" class="Campo form-control cilindradas" id="Cilindradas">
+							<input type="text" class="Campo form-control" id="Cilindradas">
 						</div>
 						<div class='form-group'>
 							<label for="NumPortas">Número de Portas</label><br>
-							<input type="number" class="Campo form-control numPortas" id="NumPortas">
+							<input type="number" class="Campo form-control" id="NumPortas">
 						</div>
 					</div>
-				</div>
 					<div class='col-md-12 text-center'>
-						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success" onclick=$.load("/Cadastro_Modelo/Javascript/Cadastro_Modelo.js")>Cadastrar</button>
+						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success">Cadastrar</button>
 						<input id="BotaoLimpar" type="button" class="btn btn-lg btn-danger" value="Cancelar"/>
 					</div>
+				</div>
 				</div>
 			</form>
 			<h4 class="text-center alert" id='resposta' hidden></h4>

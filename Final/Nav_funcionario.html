@@ -1,0 +1,12 @@
+<li class="nav_icon active"><a href="index.html">Alugar</a></li>
+<li id=Consultar_nav class="nav_icon"><a href="javascript:void(0);" onclick=$("#Workbench").load("Validar_Alugueis.html");>Validar Alugueis</a></li>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".nav_icon").click(function(event)
+    {
+      $(".active").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+</script>

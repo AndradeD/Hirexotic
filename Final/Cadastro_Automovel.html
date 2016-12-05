@@ -1,0 +1,52 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Cadastro de Automóveis</h1>
+		</div>
+		<div class='panel-body'>
+			<form role='form' class='row container' action="/Cadastro_Automoveis/PHP/CadastrarAutomovel.php" method="post">
+				<div class='col-md-12'>
+					<div class='form-group' id='Cadastro_tipo'>
+						<label>Modelo</label><br>
+						<div class='form-group'>
+               <select id="Modelo" name="modelo">
+               </select>
+						 </div>
+						<div class='form-group'>
+							<label for="Placa">Placa</label><br>
+							<input type="Text" class="Campo form-control placa" id="Placa" name="placa">
+						</div>
+						<div class='form-group'>
+							<label for="AnoFab">Ano Fabricação</label><br>
+							<input type="Text" class="Campo form-control anoFab" id="AnoFab" name="anoFab">
+						</div>
+						<div class='form-group'>
+							<label for="Cor">Cor</label><br>
+							<input type="Text" class="Campo form-control cor" id="Cor" name="cor">
+						</div>
+						<div class='form-group'>
+							<label for="Combust">Combustível</label><br>
+							<input type="text" class="Campo form-control combustivel" id="Combust" name="combustivel">
+						</div>
+            <div class='form-group'>
+							<label for="PrecoMin">Preço Mínimo</label><br>
+							<input type="text" class="Campo form-control precomin" id="PrecoMin" name="precoMin">
+						</div>
+						<div class='form-group'>
+							<label class="control-label">Select File</label>
+				    	<input id="imagem" type="file" class="file" name="imagem">
+						</div>
+					</div>
+				</div>
+					<div class='col-md-12 text-center'>
+						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success">Cadastrar</button>
+						<input id="BotaoLimpar" type="button" class="btn btn-lg btn-danger" value="Cancelar"/>
+					</div>
+				</div>
+			</form>
+			<h4 class="text-center alert" id='resposta' hidden></h4>
+		</div>
+	</div>
+</div>
+<script src="/Cadastro_Automoveis/JavaScript/Cadastro_Automoveis.js"></script>

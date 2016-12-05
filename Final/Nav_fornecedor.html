@@ -1,0 +1,13 @@
+<li class="nav_icon active"><a href="index.html">Alugar</a></li>
+<li id=Consultar_nav class="nav_icon"><a href="javascript:void(0);" onclick=$("#Workbench").load("Cadastro_Modelo.html");>Cadastrar Modelo</a></li>
+<li id=Cadastrar_nav class="nav_icon" ><a href="javascript:void(0);" onclick=$("#Workbench").load("Cadastro_Automovel.html");>Cadastrar Automovel</a></li>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(".nav_icon").click(function(event)
+    {
+      $(".active").removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+</script>

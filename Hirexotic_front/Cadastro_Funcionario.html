@@ -1,0 +1,66 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Cadastro de Funcionário</h1>
+		</div>
+		<div class='panel-body'>
+			<form role='form' class='row container'>
+				<div class='col-md-6'>
+					<div class='form-group' id='Cadastro_tipo'>
+						<label>Funcionário</label><br>
+				 		<div class='form-inline'>
+							<div class='form-group'>
+								 <label for="Nome_text" style="font-weight: normal;">Nome Completo</label>
+								<input type="text" class='Campo form-control' id="Nome_text" placeholder="Nome Completo" disabled>
+							</div>
+						</div>
+						<div class='form-group'>
+							<label for="Endereco">Endereço</label><br>
+							<input type="Text" class="Campo form-control" id="Endereco">
+						</div>
+						<div class='form-group'>
+							<label for="Tel">Telefone</label><br>
+							<input type="Text" class="Campo form-control tel" id="Tel" placeholder="Ex: 1234-1234"
+						</div>
+						<div class='form-group'>
+							<label for="CPF">CPF</label><br>
+							<input type="Text" class="Campo form-control cpf" id="CPF" maxlength="11" placeholder="Ex: 123..">
+						</div>
+						<div class='form-group'>
+							<label for="Data_nasc">Data de Nascimento</label><br>
+							<input type="date" class="Campo form-control data_nasc" id="Data_Nasc" placeholder="Ex: 10/01/1990">
+						</div>
+						<div class='form-group'>
+							<label for="ID">Sexo</label><br>
+							<select name="Sexo" class='form-control'id="Sexo_user">
+									<option value="M">Masculino</option>
+									<option value="F">Feminino</option>
+									<option></option>
+							</select>
+						</div>
+            <div class='form-group'>
+							<label for="Matricula">Matrícula</label><br>
+							<input type="text" class="Campo form-control matricula" id="Matricula">
+						</div>
+						<div class='form-group'>
+							<label for="Usuario">Usuário</label><br>
+							<input type="text" class="Campo form-control usuario" id="Usuario">
+						</div>
+						<div class='form-group'>
+							<label for="Senha">Senha</label><br>
+							<input type="password" class="Campo form-control senha" id="Senha">
+						</div>
+					</div>
+				</div>
+					<div class='col-md-12 text-center'>
+						<button id="BotaoCadastro" type="submit" class="btn btn-lg btn-success" onclick=$.load("/Cadastro_Funcionario/Javascript/Cadastro_Funcionario.js")>Cadastrar</button>
+						<input id="BotaoLimpar" type="button" class="btn btn-lg btn-danger" value="Cancelar"/>
+					</div>
+				</div>
+			</form>
+			<h4 class="text-center alert" id='resposta' hidden></h4>
+		</div>
+	</div>
+</div>
+<script src="/Cadastro_Funcionario/JavaScript/Cadastro_Funcionario.js"></script>

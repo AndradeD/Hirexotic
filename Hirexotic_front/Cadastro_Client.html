@@ -1,4 +1,3 @@
-<script src="/Comuns/TestAut.js"></script>
 <div class='container-fluid'>
 	<div class='panel panel-primary'>
 		<div class='panel-heading'>
@@ -24,7 +23,7 @@
 						</div>
 						<div class='form-group'>
 							<label for="Tel">Telefone</label><br>
-							<input type="Text" class="Campo form-control tel" id="Tel" placeholder="Ex: 1234-1234"
+							<input type="Text" class="Campo form-control tel" id="Tel" placeholder="Ex: 1234-1234">
 						</div>
 						<div class='form-group'>
 							<label for="CPF">CPF</label><br>
@@ -76,6 +75,79 @@
 							<div class='form-group'>
 								<label for="Data_nasc">Data de Nascimento</label><br>
 								<input type="date" class="Campo form-control data_nasc" id="Data_Nasc" placeholder="Ex: 10/01/1990">
+							</div>
+							<div class='form-group'>
+								<label for="Usuario">Usuário</label><br>
+								<input type="text" class="Campo form-control usuario" id="Usuario">
+							</div>
+							<div class='form-group'>
+								<label for="Senha">Senha</label><br>
+								<input type="password" class="Campo form-control senha" id="Senha">
+							</div>
+						</div>
+					</div>
+
+					<div class='form-group' id='Cadastro_tipo'>
+						<label>Fornecedor</label><br>
+				 		<div class='form-inline'>
+							<div class='form-group'>
+								<select name="Tipo" class='form-control'id="Tipo_sel" value="Fornecedor"></select>
+							</div>
+							<div class='form-group'>
+								 <label for="Tipo_text" style="font-weight: normal;">Nome Completo</label>
+								<input type="text" class='Campo form-control' id="Tipo_text" placeholder="Tipo do material" disabled>
+							</div>
+							<div class='form-group'>
+								<label for="Endereco_PF">Endereço</label><br>
+								<input type="Text" class="Campo form-control" id="Endereco_PF">
+							</div>
+							<div class='form-group'>
+								<label for="Tel">Telefone</label><br>
+								<input type="Text" class="Campo form-control nota_fisc" id="Tel" placeholder="Ex: 1234-1234">
+							</div>
+							<div class='form-group'>
+								<label for="CPF">CPF</label><br>
+								<input type="Text" class="Campo form-control cpf" id="CPF" maxlength="11" placeholder="Ex: 123..">
+							</div>
+							<div class='form-group'>
+								<label for="CNPJ">CNPJ</label><br>
+								<input type="Text" class="Campo form-control cnpj" id="CNPJ" maxlength="14" placeholder="Ex: 123..">
+							</div>
+							<div class='form-group'>
+								<label for="Data_nasc">Data de Nascimento</label><br>
+								<input type="date" class="Campo form-control data_nasc" id="Data_Nasc" placeholder="Ex: 10/01/1990">
+							</div>
+							<div class='form-group'>
+								<label for="ID">Sexo</label><br>
+								<select name="Sexo" class='form-control'id="Sexo_user">
+										<option value="M">Masculino</option>
+										<option value="F">Feminino</option>
+										<option></option>
+								</select>
+							</div>
+							<div class='form-group'>
+								<label for="Placa">Placa</label><br>
+								<input type="Text" class="Campo form-control placa" id="Placa" name="placa">
+							</div>
+							<div class='form-group'>
+								<label for="AnoFab">Ano Fabricação</label><br>
+								<input type="Text" class="Campo form-control anoFab" id="AnoFab" name="anoFab">
+							</div>
+							<div class='form-group'>
+								<label for="Cor">Cor</label><br>
+								<input type="Text" class="Campo form-control cor" id="Cor" name="cor">
+							</div>
+							<div class='form-group'>
+								<label for="Combust">Combustível</label><br>
+								<input type="text" class="Campo form-control combustivel" id="Combust" name="combustivel">
+							</div>
+							<div class='form-group'>
+								<label for="PrecoMin">Preço Mínimo</label><br>
+								<input type="text" class="Campo form-control precomin" id="PrecoMin" name="precoMin">
+							</div>
+							<div class='form-group'>
+								<label class="control-label">Select File</label>
+								<input id="imagem" type="file" class="file" name="imagem">
 							</div>
 							<div class='form-group'>
 								<label for="Usuario">Usuário</label><br>

@@ -1,0 +1,77 @@
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title">Dados do Automóvel</h4>
+    </div>
+    <div class="modal-body">
+      <table class='table table-bordered table-condensed' style="text-align: left;">
+        <tbody class='h4'>
+          <tr id='modelo'>
+            <td>Modelo: </td>
+          </tr>
+          <tr id='marca'>
+            <td>Marca: </td>
+          </tr>
+          <tr id='cor'>
+            <td>Cor: </td>
+          </tr>
+          <tr id='nportas'>
+            <td>Portas: </td>
+          </tr>
+          <tr id='fabricacao'>
+            <td>Fabricacao: </td>
+          </tr>
+          <tr id='combustivel'>
+            <td>Combustivel: </td>
+          </tr>
+          <tr id='npassageiros'>
+            <td>Nº Passageiros: </td>
+          </tr>
+          <tr id='cilindrada'>
+            <td>Cilindradas: </td>
+          </tr>
+          <tr id='velocidade'>
+            <td>Velocidade Max: </td>
+          </tr>
+          <tr id='pminimo'>
+            <td>Preco: </td>
+          </tr>
+          <tr id='cnpj'>
+            <td>Fornecedor: </td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="aluguel">
+        <div class="form-group">
+            <label for='datainicio'>Data de retirada:</label>
+            <input type="Text" class="campo data form-control" id="datainicio" required placeholder="22/03/2016">
+        </div>
+        <div class="form-group">
+            <label for="datafim">Data de devolução:</label>
+            <input type="Text" class="campo data form-control" id="datafim" placeholder="24/03/2016">
+        </div>
+        <div class="form-group">
+          <label for="pagamento">Pagamento:</label>
+          <select class="campo form-control" id="pagamento">
+            <option value="cartao">Cartão de Crédito</option>
+            <option value="boleto">Boleto</option>
+          </select>
+        </div>
+        <div class="form-group">
+            <label for="datafim">Preço total:</label>
+            <input type="Text" class="campo form-control data" id="Preco_aluguel" readonly>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class='text-center'>
+          <button type="button" id="BotaoAlugar" class="btn btn-block btn-success">Alugar</button>
+          <button type="button" class="btn btn-block btn-danger" data-dismiss="modal">Fechar</button>
+        </div>
+        <div id='resposta' class="text-center alert" hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/Modal_automovel/JavaScript/Modal.js"></script>
+<script src="/Modal_automovel/JavaScript/Alugar.js"></script>

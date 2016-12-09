@@ -1,0 +1,33 @@
+<script src="/Comuns/TestAut.js"></script>
+<div class='container-fluid'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading'>
+			<h1 class='text-center'>Consulta de Aluguéis</h1>
+		</div>
+		<div class='panel-body'>
+			<label for="tabela_resultado">Alugueis pendentes:</label>
+			<div class='pre-scrollable table-responsive' style="min-height: 350px">
+				<table id='tabela_resultado'class='table table-bordered table-condensed table-striped' style="text-align: left;">
+					<thead>
+						<tr>
+							<th>Placa</th>
+							<th>Modelo</th>
+							<th>Cor</th>
+							<th>Ano</th>
+							<th>Combustivel</th>
+							<th>Fornecedor</th>
+							<th>Tel fornecedor</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody  id="resposta_alugueis" >
+					</tbody>
+				</table>
+			</div>
+			<h4 class="text-center alert" id='resposta' hidden></h4>
+		</div>
+	</div>
+</div>
+<script src="/Validar_Alugueis/JavaScript/ListarAlugueis.js"></script>
+<script src="/Validar_Alugueis/JavaScript/EfetivarAluguel.js"></script>
